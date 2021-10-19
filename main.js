@@ -79,6 +79,7 @@ function save(){
 }
 
 function load(){
+    console.log("Loading...")
     var savegame = JSON.parse(localStorage.getItem("save"));
     clicks = savegame.clicks;
     cursors = savegame.cursors;
