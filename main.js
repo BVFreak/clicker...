@@ -22,10 +22,10 @@ function load(){
     console.log("Loading...")
     var savegame = JSON.parse(localStorage.getItem("save"));
 
-    clicks = savegame.clicks;
-    cursors = savegame.cursors;
-    cardboardboxes = savegame.cardboardboxes;
-    cacti = savegame.cacti;
+    clicks = savegame ? savegame.clicks : 0;
+    cursors = savegame ? savegame.cursors : 0;
+    cardboardboxes = savegame ? savegame.cardboardboxes : 0;
+    cacti = savegame ? savegame.cacti : 0;
 
     document.getElementById('cursors').innerHTML = cursors;
     var nextCost = Math.floor(15 * Math.pow(1.2,cursors));
@@ -49,7 +49,11 @@ window.setInterval(function(){
 }, 60000);
 
 
-
+function wipesave(){
+    alert("wiping save or something lol")
+    localStorage.removeItem("save");
+    load();
+}
 
 function clickClick(number){
     clicks = clicks + number;
