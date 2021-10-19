@@ -4,10 +4,57 @@ var cursors = 0;
 var cardboardboxes = 0;
 var cacti = 0;
 
+function save(){
+    var save = {
+        clicks: clicks,
+        cursors: cursors,
+        cardboardboxes: cardboardboxes,
+        cacti: cacti
+    }
+    localStorage.setItem("save",JSON.stringify(save));
+    
+    // show Saved for 1 second only
+    document.getElementById('savebox').innerHTML = "Saved!";
+    console.log("Saved");
+}
+
+function load(){
+    console.log("Loading...")
+    var savegame = JSON.parse(localStorage.getItem("save"));
+
+    clicks = savegame.clicks;
+    cursors = savegame.cursors;
+    cardboardboxes = savegame.cardboardboxes;
+    cacti = savegame.cacti;
+
+    document.getElementById('cursors').innerHTML = cursors;
+    var nextCost = Math.floor(15 * Math.pow(1.2,cursors));
+    document.getElementById('cursorCost').innerHTML = nextCost;
+
+    document.getElementById('cardboardboxes').innerHTML = cardboardboxes;
+    var nextCost = Math.floor(100 * Math.pow(1.2,cardboardboxes));
+    document.getElementById('cardboardboxCost').innerHTML = nextCost;
+
+    document.getElementById('cacti').innerHTML = cacti;
+    var nextCost = Math.floor(500 * Math.pow(1.2,cacti));
+    document.getElementById('cactusCost').innerHTML = nextCost;
+
+}
+
+load();
+
+// save automatically
+window.setInterval(function(){
+ save();
+}, 60000);
+
+
+
 
 function clickClick(number){
     clicks = clicks + number;
     document.getElementById("clicks").innerHTML = clicks;
+    document.getElementById('savebox').innerHTML = "";
 };
 
 function buyCursor(){
@@ -59,39 +106,4 @@ function buyCactus(){
 window.setInterval(function(){
 clickClick(cacti);
 }, 500);
-
-
-function save(){
-    var save = {
-        clicks: clicks,
-        cursors: cursors,
-        cardboardboxes: cardboardboxes,
-        cacti: cacti
-    }
-    localStorage.setItem("save",JSON.stringify(save));
-    
-    // show Saved for 1 second only
-    document.getElementById('savebox').innerHTML = "Auto saved!"
-    setTimeout(function(){ 
-        console.log("Waiting")
-    }, 1000);
-     document.getElementById('savebox').innerHTML = ""
-}
-
-function load(){
-    console.log("Loading...")
-    var savegame = JSON.parse(localStorage.getItem("save"));
-    clicks = savegame.clicks;
-    cursors = savegame.cursors;
-    cardboardboxes = savegame.cardboardboxes;
-    cacti = savegame.cacti;
-}
-
-load();
-
-// save automatically
-window.setInterval(function(){
- save();
-}, 60000);
-
 
