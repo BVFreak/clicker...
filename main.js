@@ -1,9 +1,15 @@
+// variables 
 var clicks = 0;
+var cursors = 0;
+var cardboardboxes = 0;
+var cacti = 0;
+
+
 function clickClick(number){
     clicks = clicks + number;
     document.getElementById("clicks").innerHTML = clicks;
 };
-var cursors = 0;
+
 function buyCursor(){
     var cursorCost = Math.floor(15 * Math.pow(1.2,cursors));     //works out the cost of this cursor
     if(clicks >= cursorCost){                                   //checks that the player can afford the cursor
@@ -20,7 +26,7 @@ window.setInterval(function(){
 clickClick(cursors);
 }, 10000);
 
-var cardboardboxes = 0;
+
 function buyCardboardBox(){
     var cardboardboxCost = Math.floor(100 * Math.pow(1.2,cardboardboxes));     //works out the cost of this cardboardbox
     if(clicks >= cardboardboxCost){                                   //checks that the player can afford the cardboardbox
@@ -37,7 +43,7 @@ window.setInterval(function(){
 clickClick(cardboardboxes);
 }, 2000);
 
-var cacti = 0;
+
 function buyCactus(){
     var cactusCost = Math.floor(500 * Math.pow(1.2,cacti));     //works out the cost of this cactus
     if(clicks >= cactusCost){                                   //checks that the player can afford the cactus
@@ -57,15 +63,34 @@ clickClick(cacti);
 
 function save(){
     var save = {
-    clicks: clicks,
-    cursors: cursors,
-    cardboardboxes: cardboardboxes,
-    cacti: cacti
-}
+        clicks: clicks,
+        cursors: cursors,
+        cardboardboxes: cardboardboxes,
+        cacti: cacti
+    }
     localStorage.setItem("save",JSON.stringify(save));
+    
+    // show Saved for 1 second only
+    document.getElementById('savebox').innerHTML = "Auto saved!"
+    setTimeout(function(){ 
+        console.log("Waiting")
+    }, 1000);
+     document.getElementById('savebox').innerHTML = ""
 }
 
 function load(){
     var savegame = JSON.parse(localStorage.getItem("save"));
+    clicks = savegame.clicks;
+    cursors = savegame.cursors;
+    cardboardboxes = savegame.cardboardboxes;
+    cacti = savegame.cacti;
 }
+
+load();
+
+// save automatically
+window.setInterval(function(){
+ save();
+}, 60000);
+
 
