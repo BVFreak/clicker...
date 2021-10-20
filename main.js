@@ -50,7 +50,7 @@ window.setInterval(function(){
 
 
 function wipesave(){
-    alert("wiping save or something lol")
+    alert("you are gonna wipe ya save lol you cant even cancel")
     localStorage.removeItem("save");
     load();
 }
@@ -96,14 +96,14 @@ clickClick(cardboardboxes);
 
 
 function buyCactus(){
-    var cactusCost = Math.floor(500 * Math.pow(1.2,cacti));     //works out the cost of this cactus
+    var cactusCost = Math.floor(600 * Math.pow(1.2,cacti));     //works out the cost of this cactus
     if(clicks >= cactusCost){                                   //checks that the player can afford the cactus
         cacti = cacti + 1;                                   //increases number of cacti
         clicks = clicks - cactusCost;                          //removes the clicks spent
         document.getElementById('cacti').innerHTML = cacti;  //updates the number of cacti for the player
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
-    var nextCost = Math.floor(500 * Math.pow(1.2,cacti));       //works out the cost of the next cactus
+    var nextCost = Math.floor(600 * Math.pow(1.2,cacti));       //works out the cost of the next cactus
     document.getElementById('cactusCost').innerHTML = nextCost;  //updates the cactus cost for the player
 };
 
@@ -111,3 +111,19 @@ window.setInterval(function(){
 clickClick(cacti);
 }, 500);
 
+
+function buyCabinet(){
+    var cabinetCost = Math.floor(5000 * Math.pow(1.2,cabinets));     //works out the cost of this cabinet
+    if(clicks >= cabinetCost){                                   //checks that the player can afford the cabinet
+        cabinets = cabinets + 1;                                   //increases number of cabinets
+        clicks = clicks - cabinetCost;                          //removes the clicks spent
+        document.getElementById('cabinets').innerHTML = cabinets;  //updates the number of cabinets for the player
+        document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
+    };
+    var nextCost = Math.floor(5000 * Math.pow(1.2,cabinets));       //works out the cost of the next cabinet
+    document.getElementById('cabinetCost').innerHTML = nextCost;  //updates the cabinet cost for the player
+};
+
+window.setInterval(function(){
+clickClick(cabinets);
+}, 500);
