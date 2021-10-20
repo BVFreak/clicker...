@@ -57,7 +57,7 @@ window.setInterval(function(){
 
 
 function wipesave(){
-    alert("you are gonna wipe ya save lol you cant even cancel")
+    alert("you are wiping your save hahaha lol")
     localStorage.removeItem("save");
     load();
 }
@@ -133,4 +133,4 @@ function buyCabinet(){
 
 window.setInterval(function(){
 clickClick(cabinets);
-}, 250);
+}, 100);
