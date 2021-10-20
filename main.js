@@ -3,13 +3,15 @@ var clicks = 0;
 var cursors = 0;
 var cardboardboxes = 0;
 var cacti = 0;
+var cabinets = 0;
 
 function save(){
     var save = {
         clicks: clicks,
         cursors: cursors,
         cardboardboxes: cardboardboxes,
-        cacti: cacti
+        cacti: cacti,
+        cabinets: cabinets
     }
     localStorage.setItem("save",JSON.stringify(save));
     
@@ -26,6 +28,7 @@ function load(){
     cursors = savegame ? savegame.cursors : 0;
     cardboardboxes = savegame ? savegame.cardboardboxes : 0;
     cacti = savegame ? savegame.cacti : 0;
+    cabinets = savegame ? savegame.cabinets : 0;
 
     document.getElementById('cursors').innerHTML = cursors;
     var nextCost = Math.floor(15 * Math.pow(1.2,cursors));
@@ -38,6 +41,10 @@ function load(){
     document.getElementById('cacti').innerHTML = cacti;
     var nextCost = Math.floor(500 * Math.pow(1.2,cacti));
     document.getElementById('cactusCost').innerHTML = nextCost;
+
+    document.getElementById('cabinets').innerHTML = cabinets;
+    var nextCost = Math.floor(5000 * Math.pow(1.2,cabinets));
+    document.getElementById('cabinetCost').innerHTML = nextCost;
 
 }
 
@@ -126,4 +133,4 @@ function buyCabinet(){
 
 window.setInterval(function(){
 clickClick(cabinets);
-}, 500);
+}, 250);
