@@ -39,7 +39,7 @@ function load(){
     document.getElementById('cardboardboxCost').innerHTML = nextCost;
 
     document.getElementById('cacti').innerHTML = cacti;
-    var nextCost = Math.floor(500 * Math.pow(1.2,cacti));
+    var nextCost = Math.floor(600 * Math.pow(1.2,cacti));
     document.getElementById('cactusCost').innerHTML = nextCost;
 
     document.getElementById('cabinets').innerHTML = cabinets;
@@ -57,7 +57,7 @@ window.setInterval(function(){
 
 
 function wipesave(){
-    alert("you are wiping your save hahaha lol")
+    alert("you are wiping your save. sucks to be you lol")
     localStorage.removeItem("save");
     load();
 }
