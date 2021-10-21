@@ -53,7 +53,7 @@ load();
 // save automatically
 window.setInterval(function(){
  save();
-}, 60000);
+}, 30000);
 
 
 function wipesave(){
