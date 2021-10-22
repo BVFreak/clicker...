@@ -48,7 +48,7 @@ function load(){
 
 }
 
-load();
+load();5
 
 // save automatically
 window.setInterval(function(){
@@ -99,7 +99,8 @@ function buyCardboardBox(){
 
 window.setInterval(function(){
 clickClick(cardboardboxes);
-}, 2000);
+clickClick(cardboardboxes);
+}, 1000);
 
 
 function buyCactus(){
@@ -116,7 +117,11 @@ function buyCactus(){
 
 window.setInterval(function(){
 clickClick(cacti);
-}, 500);
+clickClick(cacti);
+clickClick(cacti);
+clickClick(cacti);
+clickClick(cacti);
+}, 1000);
 
 
 function buyCabinet(){
@@ -133,4 +138,30 @@ function buyCabinet(){
 
 window.setInterval(function(){
 clickClick(cabinets);
-}, 100);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+clickClick(cabinets);
+
+}, 1000);
+
+// shorten numbers
+
+function m(n,d){x=(''+n).length,p=Math.pow,d=p(10,d)
+x-=x%3
+return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]}
