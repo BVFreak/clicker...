@@ -1,9 +1,11 @@
 * {
-  font-size: 18px;
-  font-face: "Comic Sans MS";
+  font-size: 14px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: yellow;
 }
+
 body {
-  background-color: white;
+  background-color: purple;
   margin: 5px;
 }
 button {
