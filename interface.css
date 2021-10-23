@@ -6,8 +6,9 @@ body {
   margin: 5px;
 }
 button {
-  color: white;
+  color: black;
   background: darkgrey;
+  border: 1px solid black;
   margin: 2px;
   padding: 2px;
 }
