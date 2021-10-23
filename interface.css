@@ -1,8 +1,9 @@
 * {
-  font-size: 14px;
+  font-size: 18px;
+  font-face: "Comic Sans MS";
 }
 body {
-  background-color: pink;
+  background-color: white;
   margin: 5px;
 }
 button {
