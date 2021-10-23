@@ -48,7 +48,7 @@ function load(){
 
 }
 
-load();5
+load();
 
 // save automatically
 window.setInterval(function(){
