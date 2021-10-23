@@ -5,3 +5,9 @@ body {
   background-color: white;
   margin: 5px;
 }
+button {
+  color: white;
+  background: darkgrey;
+  margin: 2px;
+  padding: 2px;
+}
