@@ -160,8 +160,28 @@ clickClick(cabinets);
 
 }, 1000);
 
-// shorten numbers
+// Get the modal
+var modal = document.getElementById("myModal");
 
-function m(n,d){x=(''+n).length,p=Math.pow,d=p(10,d)
-x-=x%3
-return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]}
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
