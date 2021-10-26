@@ -15,3 +15,8 @@ button {
   filter: drop-shadow(8px 8px 10px gray);
 }
 
+td{
+cursor: pointer;
+margin: 15px 0;
+}
+
