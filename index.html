@@ -12,7 +12,7 @@
     <tr>
       <td><a href="https://github.com/BVFreak">Made by BVFreak</a></td>
       <td type="button" onclick="toggleModal('modal-id')">Achievements</td>
-      <td type-"button" onClicker="toggleModal('modal-id')">Options</td>
+      <td type-"button" onClicker="toggleModal2('modal-id2')">Options</td>
     </tr>
   </table>
 
@@ -51,7 +51,7 @@ this is the achievements menu, but there is no achievements right now. so yeah.
   }
 </script>
   
-<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
+<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id2">
   <div class="relative w-auto my-6 mx-auto max-w-3xl">
     <!--content-->
     <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -60,7 +60,7 @@ this is the achievements menu, but there is no achievements right now. so yeah.
         <h3 class="text-3xl font-semibold">
           Options
         </h3>
-        <button onclick="toggleModal('modal-id')">
+        <button onclick="toggleModal2('modal-id2')">
           <span class="bg-transparent text-black opacity-100 h-6 w-6 block outline-none focus:outline-none">
             X
           </span>
@@ -69,20 +69,24 @@ this is the achievements menu, but there is no achievements right now. so yeah.
       <!--body-->
       <div class="relative p-6 flex-auto">
         <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-
+<button onClick="save()">Save</button>
+  <span id="savebox"></span>
+<br>
+<br>
+<strong><button onClick="wipesave()">Wipe Save</button></strong>
         </p>
       </div>
       </div>
     </div>
   </div>
 </div>
-<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id2-backdrop"></div>
 <script type="text/javascript">
-  function toggleModal(modalID){
-    document.getElementById(modalID).classList.toggle("hidden");
-    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
-    document.getElementById(modalID).classList.toggle("flex");
-    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+  function toggleModal2(modalID2){
+    document.getElementById(modalID2).classList.toggle("hidden");
+    document.getElementById(modalID2 + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID2).classList.toggle("flex");
+    document.getElementById(modalID2 + "-backdrop").classList.toggle("flex");
   }
 </script>
 
@@ -120,11 +124,6 @@ Cost: <span id="cabinetCost">5000</span></button></div>
 <br>
 <br>
 <br>
-<button onClick="save()">Save</button>
-  <span id="savebox"></span>
-<br>
-<br>
-<strong><button onClick="wipesave()">Wipe Save</button></strong>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
