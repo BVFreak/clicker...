@@ -31,19 +31,19 @@ function load(){
     cabinets = savegame ? savegame.cabinets : 0;
 
     document.getElementById('cursors').innerHTML = cursors;
-    var nextCost = Math.floor(15 * Math.pow(1.2,cursors));
+    var nextCost = Math.floor(15 * Math.pow(1.15,cursors));
     document.getElementById('cursorCost').innerHTML = nextCost;
 
     document.getElementById('cardboardboxes').innerHTML = cardboardboxes;
-    var nextCost = Math.floor(100 * Math.pow(1.2,cardboardboxes));
+    var nextCost = Math.floor(100 * Math.pow(1.15,cardboardboxes));
     document.getElementById('cardboardboxCost').innerHTML = nextCost;
 
     document.getElementById('cacti').innerHTML = cacti;
-    var nextCost = Math.floor(600 * Math.pow(1.2,cacti));
+    var nextCost = Math.floor(600 * Math.pow(1.15,cacti));
     document.getElementById('cactusCost').innerHTML = nextCost;
 
     document.getElementById('cabinets').innerHTML = cabinets;
-    var nextCost = Math.floor(5000 * Math.pow(1.2,cabinets));
+    var nextCost = Math.floor(5000 * Math.pow(1.15,cabinets));
     document.getElementById('cabinetCost').innerHTML = nextCost;
 
 }
@@ -69,14 +69,14 @@ function clickClick(number){
 };
 
 function buyCursor(){
-    var cursorCost = Math.floor(15 * Math.pow(1.2,cursors));     //works out the cost of this cursor
+    var cursorCost = Math.floor(15 * Math.pow(1.15,cursors));     //works out the cost of this cursor
     if(clicks >= cursorCost){                                   //checks that the player can afford the cursor
         cursors = cursors + 1;                                   //increases number of cursors
     	clicks = clicks - cursorCost;                          //removes the clicks spent
         document.getElementById('cursors').innerHTML = cursors;  //updates the number of cursors for the player
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
-    var nextCost = Math.floor(15 * Math.pow(1.2,cursors));       //works out the cost of the next cursor
+    var nextCost = Math.floor(15 * Math.pow(1.15,cursors));       //works out the cost of the next cursor
     document.getElementById('cursorCost').innerHTML = nextCost;  //updates the cursor cost for the player
 };
 
@@ -86,14 +86,14 @@ clickClick(cursors);
 
 
 function buyCardboardBox(){
-    var cardboardboxCost = Math.floor(100 * Math.pow(1.2,cardboardboxes));     //works out the cost of this cardboardbox
+    var cardboardboxCost = Math.floor(100 * Math.pow(1.15,cardboardboxes));     //works out the cost of this cardboardbox
     if(clicks >= cardboardboxCost){                                   //checks that the player can afford the cardboardbox
         cardboardboxes = cardboardboxes + 1;                                   //increases number of cardboardboxes
         clicks = clicks - cardboardboxCost;                          //removes the clicks spent
         document.getElementById('cardboardboxes').innerHTML = cardboardboxes;  //updates the number of cardboardboxes for the player
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
-    var nextCost = Math.floor(100 * Math.pow(1.2,cardboardboxes));       //works out the cost of the next cardboardbox
+    var nextCost = Math.floor(100 * Math.pow(1.15,cardboardboxes));       //works out the cost of the next cardboardbox
     document.getElementById('cardboardboxCost').innerHTML = nextCost;  //updates the cardboardbox cost for the player
 };
 
@@ -104,14 +104,14 @@ clickClick(cardboardboxes);
 
 
 function buyCactus(){
-    var cactusCost = Math.floor(600 * Math.pow(1.2,cacti));     //works out the cost of this cactus
+    var cactusCost = Math.floor(600 * Math.pow(1.15,cacti));     //works out the cost of this cactus
     if(clicks >= cactusCost){                                   //checks that the player can afford the cactus
         cacti = cacti + 1;                                   //increases number of cacti
         clicks = clicks - cactusCost;                          //removes the clicks spent
         document.getElementById('cacti').innerHTML = cacti;  //updates the number of cacti for the player
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
-    var nextCost = Math.floor(600 * Math.pow(1.2,cacti));       //works out the cost of the next cactus
+    var nextCost = Math.floor(600 * Math.pow(1.15,cacti));       //works out the cost of the next cactus
     document.getElementById('cactusCost').innerHTML = nextCost;  //updates the cactus cost for the player
 };
 
@@ -125,14 +125,14 @@ clickClick(cacti);
 
 
 function buyCabinet(){
-    var cabinetCost = Math.floor(5000 * Math.pow(1.2,cabinets));     //works out the cost of this cabinet
+    var cabinetCost = Math.floor(5000 * Math.pow(1.15,cabinets));     //works out the cost of this cabinet
     if(clicks >= cabinetCost){                                   //checks that the player can afford the cabinet
         cabinets = cabinets + 1;                                   //increases number of cabinets
         clicks = clicks - cabinetCost;                          //removes the clicks spent
         document.getElementById('cabinets').innerHTML = cabinets;  //updates the number of cabinets for the player
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
-    var nextCost = Math.floor(5000 * Math.pow(1.2,cabinets));       //works out the cost of the next cabinet
+    var nextCost = Math.floor(5000 * Math.pow(1.15,cabinets));       //works out the cost of the next cabinet
     document.getElementById('cabinetCost').innerHTML = nextCost;  //updates the cabinet cost for the player
 };
 
