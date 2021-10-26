@@ -17,8 +17,8 @@ button {
 
 button-red {
 color: grey;
-  background: red;
-  border: 1px solid black;
+  background: grey;
+  border: 1px solid red;
   margin: 2px;
   padding: 2px;
 filter: drop-shadow(8px 8px 10px gray);
