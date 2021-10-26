@@ -24,6 +24,12 @@ color: red;
 filter: drop-shadow(8px 8px 10px gray);
 }
 
+span-clicks {
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+}
+
 td{
 cursor: pointer;
 }
