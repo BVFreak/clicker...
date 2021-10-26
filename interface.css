@@ -16,8 +16,8 @@ button {
 }
 
 button-red {
-color: red;
-  background: darkgrey;
+color: black;
+  background: red;
   border: 1px solid black;
   margin: 2px;
   padding: 2px;
