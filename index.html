@@ -71,7 +71,7 @@ this is the achievements menu, but there is no achievements right now. so yeah.
 <button onClick="save()">Save</button>
 <br>
 <br>
-<button-red onClick="toggleModal3('modal-id3')" onClick="wipesave()">Wipe Save</button-red>
+<button-red class="" onClick="toggleModal3('modal-id3')" onClick="wipesave()">Wipe Save</button-red>
       </div>
       </div>
     </div>
@@ -111,7 +111,7 @@ This can not be undone; choose wisely now!
         <button class="text-grey-500 type="button" onclick="toggleModal3('modal-id3')">
           Cancel
         </button>
-        <button class="bg-red-500 type="button" onClick="toggleModal2('modal-id2')" onclick="toggleModal3('modal-id3')">
+        <button class="bg-red-500 type="button" onClick="toggleModal2('modal-id2'), toggleModal3('modal-id3')"
           Wipe Save
         </button>
       </div>
