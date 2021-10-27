@@ -57,7 +57,7 @@ window.setInterval(function(){
 
 
 function wipesave(){
-    alert("you are wiping your save. sucks to be you lol")
+    alert("Wiped save successfully.")
     localStorage.removeItem("save");
     load();
 }
