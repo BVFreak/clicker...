@@ -4,6 +4,7 @@ var cursors = 0;
 var cardboardboxes = 0;
 var cacti = 0;
 var cabinets = 0;
+var cafes = 0;
 
 function save(){
     var save = {
@@ -11,7 +12,8 @@ function save(){
         cursors: cursors,
         cardboardboxes: cardboardboxes,
         cacti: cacti,
-        cabinets: cabinets
+        cabinets: cabinets,
+        cafes: cafes
     }
     localStorage.setItem("save",JSON.stringify(save));
     
@@ -21,7 +23,7 @@ function save(){
 }
 
 function load(){
-    console.log("Loading...")
+    console.log("Cheating ruins the fun... or are you looking for a bug?")
     var savegame = JSON.parse(localStorage.getItem("save"));
 
     clicks = savegame ? savegame.clicks : 0;
@@ -29,6 +31,7 @@ function load(){
     cardboardboxes = savegame ? savegame.cardboardboxes : 0;
     cacti = savegame ? savegame.cacti : 0;
     cabinets = savegame ? savegame.cabinets : 0;
+    cafes = savegame ? savegame.cafes : 0;
 
     document.getElementById('cursors').innerHTML = cursors;
     var nextCost = Math.floor(15 * Math.pow(1.15,cursors));
@@ -45,6 +48,10 @@ function load(){
     document.getElementById('cabinets').innerHTML = cabinets;
     var nextCost = Math.floor(5000 * Math.pow(1.15,cabinets));
     document.getElementById('cabinetCost').innerHTML = nextCost;
+
+    document.getElementById('cafes').innerHTML = cafes;
+    var nextCost = Math.floor(15000 * Math.pow(1.15,cafes));
+    document.getElementById('cafeCost').innerHTML = nextCost;
 
 }
 
@@ -159,4 +166,40 @@ clickClick(cabinets);
 clickClick(cabinets);
 
 }, 1000);
+
+
+function buyCafe(){
+    var cabinetCost = Math.floor(15000 * Math.pow(1.15,cafes));     //works out the cost of this cafe
+    if(clicks >= cafeCost){                                   //checks that the player can afford the cafe
+        cafes = cafes + 1;                                   //increases number of cafes
+        clicks = clicks - cafeCost;                          //removes the clicks spent
+        document.getElementById('cafes').innerHTML = cafes;  //updates the number of cafes for the player
+        document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
+    };
+    var nextCost = Math.floor(15000 * Math.pow(1.15,cafes));       //works out the cost of the next cafe
+    document.getElementById('cafeCost').innerHTML = nextCost;  //updates the cafe cost for the player
+};
+
+window.setInterval(function(){
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+clickClick(cafes);
+}, 100);
 
