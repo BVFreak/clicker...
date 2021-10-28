@@ -169,7 +169,7 @@ clickClick(cabinets);
 
 
 function buyCafe(){
-    var cabinetCost = Math.floor(15000 * Math.pow(1.15,cafes));     //works out the cost of this cafe
+    var cafeCost = Math.floor(15000 * Math.pow(1.15,cafes));     //works out the cost of this cafe
     if(clicks >= cafeCost){                                   //checks that the player can afford the cafe
         cafes = cafes + 1;                                   //increases number of cafes
         clicks = clicks - cafeCost;                          //removes the clicks spent
