@@ -64,6 +64,12 @@ window.setInterval(function(){
  save();
 }, 30000);
 
+// save when close window
+window.onbeforeunload = closingCode;
+function closingCode(){
+   save();
+   return null;
+}
 
 function wipesave(){
     alert("Wiped save successfully.")
@@ -72,7 +78,6 @@ function wipesave(){
 }
 
 function clickClick(number){
-
     clicks = clicks + number;
     document.getElementById("clicks").innerHTML = clicks;
     document.getElementById('savebox').innerHTML = "";
