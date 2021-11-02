@@ -23,7 +23,6 @@ function save(){
 }
 
 function load(){
-    console.log("Cheating ruins the fun... or are you looking for a bug?")
     var savegame = JSON.parse(localStorage.getItem("save"));
 
     clicks = savegame ? savegame.clicks : 0;
@@ -56,6 +55,9 @@ function load(){
 }
 
 load();
+
+// console message
+console.log("Cheating ruins the fun... or are you looking for a bug?")
 
 // save automatically
 window.setInterval(function(){
