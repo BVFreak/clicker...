@@ -6,6 +6,7 @@ body {
   background-color: white;
   margin: 5px;
 }
+
 button {
   color: black;
   background: darkgrey;
@@ -18,6 +19,18 @@ button:active {
   animation: heart-pulse 0.1s ease-out;
 }
 
+.buybuildingbutton {
+  color: black;
+  background: darkgrey;
+  border: 1px solid black;
+  margin: 2px;
+  width: 200px;
+  padding: 2px;
+  filter: drop-shadow(8px 8px 10px gray);
+}
+.buybuildingbutton:active {
+  animation: heart-pulse 0.1s ease-out;
+}
 
 button-red {
 color: red;
@@ -36,6 +49,13 @@ span-clicks {
 
 td{
 cursor: pointer;
+}
+
+.buildingbox {
+  padding: 10px;
+  border-width: 5px;
+  border-color: black;
+  background-color:lightgray;
 }
 
 .clickbutton {
