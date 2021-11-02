@@ -72,6 +72,7 @@ function wipesave(){
 }
 
 function clickClick(number){
+
     clicks = clicks + number;
     document.getElementById("clicks").innerHTML = clicks;
     document.getElementById('savebox').innerHTML = "";
