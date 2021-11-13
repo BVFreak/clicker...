@@ -232,5 +232,5 @@ function buyNyancat(){
 
 window.setInterval(function(){
 clickClick(nyancats);
-}, 0.0001);
+}, 1);
 
