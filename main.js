@@ -41,7 +41,7 @@ function load(){
     document.getElementById('cardboardboxCost').innerHTML = nextCost;
 
     document.getElementById('cacti').innerHTML = cacti;
-    var nextCost = Math.floor(600 * Math.pow(1.15,cacti));
+    var nextCost = Math.floor(500 * Math.pow(1.15,cacti));
     document.getElementById('cactusCost').innerHTML = nextCost;
 
     document.getElementById('cabinets').innerHTML = cabinets;
@@ -119,14 +119,14 @@ clickClick(cardboardboxes);
 
 
 function buyCactus(){
-    var cactusCost = Math.floor(600 * Math.pow(1.15,cacti));     //works out the cost of this cactus
+    var cactusCost = Math.floor(500 * Math.pow(1.15,cacti));     //works out the cost of this cactus
     if(clicks >= cactusCost){                                   //checks that the player can afford the cactus
         cacti = cacti + 1;                                   //increases number of cacti
         clicks = clicks - cactusCost;                          //removes the clicks spent
         document.getElementById('cacti').innerHTML = cacti;  //updates the number of cacti for the player
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
-    var nextCost = Math.floor(600 * Math.pow(1.15,cacti));       //works out the cost of the next cactus
+    var nextCost = Math.floor(500 * Math.pow(1.15,cacti));       //works out the cost of the next cactus
     document.getElementById('cactusCost').innerHTML = nextCost;  //updates the cactus cost for the player
 };
 
@@ -136,7 +136,7 @@ clickClick(cacti);
 clickClick(cacti);
 clickClick(cacti);
 clickClick(cacti);
-}, 1000);
+}, 250);
 
 
 function buyCabinet(){
@@ -173,7 +173,7 @@ clickClick(cabinets);
 clickClick(cabinets);
 clickClick(cabinets);
 
-}, 1000);
+}, 100);
 
 
 function buyCafe(){
@@ -209,5 +209,5 @@ clickClick(cafes);
 clickClick(cafes);
 clickClick(cafes);
 clickClick(cafes);
-}, 100);
+}, 25);
 
