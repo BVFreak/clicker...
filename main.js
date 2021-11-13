@@ -5,6 +5,7 @@ var cardboardboxes = 0;
 var cacti = 0;
 var cabinets = 0;
 var cafes = 0;
+var nyancats = 0;
 
 function save(){
     var save = {
@@ -13,7 +14,8 @@ function save(){
         cardboardboxes: cardboardboxes,
         cacti: cacti,
         cabinets: cabinets,
-        cafes: cafes
+        cafes: cafes,
+        nyancats: nyancats
     }
     localStorage.setItem("save",JSON.stringify(save));
     
@@ -31,6 +33,7 @@ function load(){
     cacti = savegame ? savegame.cacti : 0;
     cabinets = savegame ? savegame.cabinets : 0;
     cafes = savegame ? savegame.cafes : 0;
+    nyancats = savegame ? savegame.nyancats : 0;
 
     document.getElementById('cursors').innerHTML = cursors;
     var nextCost = Math.floor(15 * Math.pow(1.15,cursors));
@@ -51,6 +54,10 @@ function load(){
     document.getElementById('cafes').innerHTML = cafes;
     var nextCost = Math.floor(15000 * Math.pow(1.15,cafes));
     document.getElementById('cafeCost').innerHTML = nextCost;
+    
+    document.getElementById('nyancats').innerHTML = nyancats;
+    var nextCost = Math.floor(15000 * Math.pow(1.15,nyancats));
+    document.getElementById('nyancatCost').innerHTML = nextCost;
 
 }
 
@@ -210,4 +217,20 @@ clickClick(cafes);
 clickClick(cafes);
 clickClick(cafes);
 }, 25);
+
+function buyNyancat(){
+    var nyancatCost = Math.floor(15000 * Math.pow(1.15,nyancats));     //works out the cost of this nyancat
+    if(clicks >= nyancatCost){                                   //checks that the player can afford the nyancat
+        nyancats = nyancats + 1;                                   //increases number of nyancats
+        clicks = clicks - nyancatCost;                          //removes the clicks spent
+        document.getElementById('nyancats').innerHTML = nyancats;  //updates the number of nyancats for the player
+        document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
+    };
+    var nextCost = Math.floor(15000 * Math.pow(1.15,nyancats));       //works out the cost of the next nyancat
+    document.getElementById('nyancatCost').innerHTML = nextCost;  //updates the nyancat cost for the player
+};
+
+window.setInterval(function(){
+clickClick(nyancats);
+}, 0.0001);
 
