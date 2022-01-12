@@ -57,10 +57,14 @@ function load(){
     var nextCost = Math.floor(15000 * Math.pow(1.15,cafes));
     document.getElementById('cafeCost').innerHTML = nextCost;
     
-    document.getElementById('nyancats').innerHTML = nyancats;
-    var nextCost = Math.floor(15000 * Math.pow(1.15,nyancats));
-    document.getElementById('nyancatCost').innerHTML = nextCost;
+    document.getElementById('codercats').innerHTML = codercats;
+    var nextCost = Math.floor(60000 * Math.pow(1.15,codercats));
+    document.getElementById('codercatCost').innerHTML = nextCost;
 
+    document.getElementById('cybertunes').innerHTML = cybertunes;
+    var nextCost = Math.floor(140000 * Math.pow(1.15,cybertunes));
+    document.getElementById('cybertuneCost').innerHTML = nextCost;
+    
 }
 
 load();
