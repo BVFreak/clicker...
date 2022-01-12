@@ -35,7 +35,8 @@ function load(){
     cacti = savegame ? savegame.cacti : 0;
     cabinets = savegame ? savegame.cabinets : 0;
     cafes = savegame ? savegame.cafes : 0;
-    nyancats = savegame ? savegame.nyancats : 0;
+    codercats = savegame ? savegame.codercats : 0;
+    cybertunes = savegame ? savegame.cybertunes : 0;
 
     document.getElementById('cursors').innerHTML = cursors;
     var nextCost = Math.floor(15 * Math.pow(1.15,cursors));
