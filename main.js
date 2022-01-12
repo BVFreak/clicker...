@@ -5,7 +5,8 @@ var cardboardboxes = 0;
 var cacti = 0;
 var cabinets = 0;
 var cafes = 0;
-var nyancats = 0;
+var codercats = 0;
+var cybertunes = 0;
 
 function save(){
     var save = {
@@ -15,7 +16,8 @@ function save(){
         cacti: cacti,
         cabinets: cabinets,
         cafes: cafes,
-        nyancats: nyancats
+        codercats: codercats,
+        cybertunes: cybertunes
     }
     localStorage.setItem("save",JSON.stringify(save));
     
@@ -64,7 +66,7 @@ function load(){
 load();
 
 // console message
-console.log("Cheating ruins the fun... or are you looking for a bug?")
+console.log("[!] Cheating ruins the fun... or are you looking for a bug? [!]")
 
 // save automatically
 window.setInterval(function(){
@@ -218,19 +220,37 @@ clickClick(cafes);
 clickClick(cafes);
 }, 25);
 
-function buyNyancat(){
-    var nyancatCost = Math.floor(15000 * Math.pow(1.15,nyancats));     //works out the cost of this nyancat
-    if(clicks >= nyancatCost){                                   //checks that the player can afford the nyancat
-        nyancats = nyancats + 1;                                   //increases number of nyancats
-        clicks = clicks - nyancatCost;                          //removes the clicks spent
-        document.getElementById('nyancats').innerHTML = nyancats;  //updates the number of nyancats for the player
+function buyCodercat(){
+    var codercatCost = Math.floor(15000 * Math.pow(1.15,codercats));     //works out the cost of this codercat
+    if(clicks >= codercatCost){                                   //checks that the player can afford the codercat
+       codercats = codercats + 1;                                   //increases number of codercats
+        clicks = clicks - codercatCost;                          //removes the clicks spent
+        document.getElementById('codercats').innerHTML = codercats;  //updates the number of codercats for the player
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
-    var nextCost = Math.floor(15000 * Math.pow(1.15,nyancats));       //works out the cost of the next nyancat
-    document.getElementById('nyancatCost').innerHTML = nextCost;  //updates the nyancat cost for the player
+    var nextCost = Math.floor(15000 * Math.pow(1.15,codercats));       //works out the cost of the next codercat
+    document.getElementById('codercatsCost').innerHTML = nextCost;  //updates the codercat cost for the player
 };
 
 window.setInterval(function(){
-clickClick(nyancats);
+clickClick(cybertune);
 }, 1);
 
+function buyCybertune(){
+    var cybertuneCost = Math.floor(15000 * Math.pow(1.15,cybertunes));     //works out the cost of this codercat
+    if(clicks >= cybertuneCost){                                   //checks that the player can afford the codercat
+       cybertunes = cybertunes + 1;                                   //increases number of codercats
+        clicks = clicks - cybertuneCost;                          //removes the clicks spent
+        document.getElementById('cybertunes').innerHTML = cybertunes;  //updates the number of codercats for the player
+        document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
+    };
+    var nextCost = Math.floor(15000 * Math.pow(1.15,cybertunes));       //works out the cost of the next cybertune
+    document.getElementById('cybertunesCost').innerHTML = nextCost;  //updates the cybertune cost for the player
+};
+
+window.setInterval(function(){
+clickClick(cybertunes);
+clickClick(cybertunes);
+clickClick(cybertunes);
+clickClick(cybertunes);
+}, 0.1);
