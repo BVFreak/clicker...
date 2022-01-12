@@ -14,7 +14,7 @@
       <td><a href="https://github.com/BVFreak">Made by BVfreak</a></td>
       <td type="button" onclick="toggleModal('modal-id')">Achievements</td>
       <td type-"button" onClick="toggleModal2('modal-id2')">Options</td>
-      <td type-"button" onClick="toggleModal2('modal-id2')">Roadmap [new]</td>
+      <td type-"button" onClick="toggleModal4('modal-id4')">Roadmap [new]</td>
     </tr>
   </table>
 
@@ -130,47 +130,42 @@ This can not be undone!
   }
 </script>
 
-<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id4">
+<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
   <div class="relative w-auto my-6 mx-auto max-w-3xl">
     <!--content-->
     <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
       <!--header-->
       <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
         <h3 class="text-3xl font-semibold">
-          Are you sure you want to wipe your save?
+          Achievements
         </h3>
-        <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal3('modal-id3')">
+        <button onclick="toggleModal('modal-id')">
+          <span class="bg-transparent text-black opacity-100 h-6 w-6 block outline-none focus:outline-none">
+            X
+          </span>
         </button>
       </div>
       <!--body-->
       <div class="relative p-6 flex-auto">
         <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-This can not be undone!
+this is the achievements menu, but there is no achievements system right now.
         </p>
       </div>
-      <!--footer-->
-      <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-        <button class="text-grey-500 type="button" onClick="toggleModal3('modal-id4')">
-          Cancel
-        </button>
-        <button class="text-red-500 type="button" onClick="wipesave()">
-          Wipe Save
-        </button>
       </div>
     </div>
   </div>
 </div>
-<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id4-backdrop"></div>
+<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
 <script type="text/javascript">
-  function toggleModal3(modalID3){
-    document.getElementById(modalID3).classList.toggle("hidden");
-    document.getElementById(modalID3 + "-backdrop").classList.toggle("hidden");
-    document.getElementById(modalID3).classList.toggle("flex");
-    document.getElementById(modalID3 + "-backdrop").classList.toggle("flex");
+  function toggleModal(modalID){
+    document.getElementById(modalID).classList.toggle("hidden");
+    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID).classList.toggle("flex");
+    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
   }
 </script>
 
-<!-- Yes, its made by me. you can go back to the game now. -->
+<!-- hint: you can click the button -->
 
 <div class="flex space-x-4">
 
@@ -212,7 +207,7 @@ This can not be undone!
       
       <div class="mx-8"><button class="buybuildingbutton" onClick="buyCybertune()">
       Cafes: <span id="codecats">0</span><br />
-      Cost: <span id="codecatCost">15000</span></button></div>   
+      Cost: <span id="codecatCost">14</span></button></div>   
      
       </div>
     </div>
