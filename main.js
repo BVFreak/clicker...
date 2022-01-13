@@ -234,7 +234,7 @@ function buyCodercat(){
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
     var nextCost = Math.floor(15000 * Math.pow(1.15,codercats));       //works out the cost of the next codercat
-    document.getElementById('codercatsCost').innerHTML = nextCost;  //updates the codercat cost for the player
+    document.getElementById('codercatCost').innerHTML = nextCost;  //updates the codercat cost for the player
 };
 
 window.setInterval(function(){
@@ -250,7 +250,7 @@ function buyCybertune(){
         document.getElementById('clicks').innerHTML = clicks;  //updates the number of clicks for the player
     };
     var nextCost = Math.floor(15000 * Math.pow(1.15,cybertunes));       //works out the cost of the next cybertune
-    document.getElementById('cybertunesCost').innerHTML = nextCost;  //updates the cybertune cost for the player
+    document.getElementById('cybertuneCost').innerHTML = nextCost;  //updates the cybertune cost for the player
 };
 
 window.setInterval(function(){
